@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "your-webtool"
+    }
+  },
+  "defaultProject": "your-webtool",
+  "cli": {
+    "analytics": false
+  }
 }
