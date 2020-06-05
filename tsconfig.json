@@ -2,6 +2,11 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "pages*": ["src/app/pages*"],
+      "shared*": ["src/app/shared*"],
+      "webtools*": ["src/app/webtools*"],
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
