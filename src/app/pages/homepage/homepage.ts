@@ -4,6 +4,8 @@ import { ComponentPageTitle } from '../page-title/page-title';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { AppConfig } from 'shared/app-config/app-config';
+import { WebTool } from 'src/config';
 
 @Component({
   selector: 'app-homepage',
@@ -11,10 +13,13 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./homepage.scss'],
 })
 export class Homepage implements OnInit {
+  webTools: WebTool[];
   ngOnInit(): void {
     this._componentPageTitle.title = '';
   }
-  constructor(public _componentPageTitle: ComponentPageTitle) {}
+  constructor(public _componentPageTitle: ComponentPageTitle, { webTools }: AppConfig) {
+    this.webTools = webTools;
+  }
 }
 
 const routes: Routes = [{ path: '', component: Homepage }];

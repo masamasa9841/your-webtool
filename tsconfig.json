@@ -6,6 +6,7 @@
       "pages*": ["src/app/pages*"],
       "shared*": ["src/app/shared*"],
       "webtools*": ["src/app/webtools*"],
+      "testing*": ["src/app/testing*"],
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

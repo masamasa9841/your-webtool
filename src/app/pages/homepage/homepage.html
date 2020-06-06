@@ -9,10 +9,10 @@
 
 <main class="docs-homepage-promo">
   <div class="docs-homepage-row tool-list">
-    <a *ngFor="let item of [0,1,2,3,4];" class="list-item">
+    <a *ngFor="let tool of webTools;" class="list-item" [routerLink]="'/tools/' + tool.name">
       <mat-card>
-        <mat-card-title>{{item}}</mat-card-title>
-        <mat-card-content>ここがコンテント</mat-card-content>
+        <mat-card-title>{{tool.name}}</mat-card-title>
+        <mat-card-content>{{tool.description}}</mat-card-content>
       </mat-card>
     </a>
   </div>
