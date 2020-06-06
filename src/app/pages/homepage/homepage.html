@@ -11,7 +11,7 @@
   <div class="docs-homepage-row tool-list">
     <a *ngFor="let tool of webTools;" class="list-item" [routerLink]="'/tools/' + tool.name">
       <mat-card>
-        <mat-card-title>{{tool.name}}</mat-card-title>
+        <mat-card-title>{{tool.title}}</mat-card-title>
         <mat-card-content>{{tool.description}}</mat-card-content>
       </mat-card>
     </a>
