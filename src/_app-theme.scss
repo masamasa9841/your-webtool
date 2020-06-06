@@ -1,0 +1,41 @@
+@import '~@angular/material/theming';
+
+@import './app/shared/navbar/navbar-theme';
+@import './app/pages/homepage/homepage-theme';
+@import './app/pages/webtools-sidenav/component-sidenav-theme';
+
+// Styles for the docs app that are based on the current theme.
+@mixin material-docs-app-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $next-theme: mat-palette($mat-red);
+
+  .docs-app-background {
+    background: mat-color($background, background);
+  }
+
+  .docs-primary-header {
+    background: mat-color($primary);
+
+    h1 {
+      color: mat-color($primary, default-contrast);
+    }
+  }
+
+  .docs-footer {
+    background: mat-color($primary);
+    color: mat-color($primary, default-contrast);
+  }
+
+  @include nav-bar-theme($theme);
+  @include home-page-theme($theme);
+  @include component-viewer-sidenav-theme($theme);
+}
+
+// Define theme.
+$primary: mat-palette($mat-deep-orange);
+$accent: mat-palette($mat-amber, A200, A100, A400);
+$theme: mat-dark-theme($primary, $accent);
