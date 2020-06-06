@@ -1,0 +1,12 @@
+<nav class="docs-navbar-header" aria-label="Top Toolbar">
+  <a mat-button class="docs-button" routerLink="/" aria-label="your-webtool">
+    <span>your-webtool</span>
+  </a>
+
+  <button mat-button [matMenuTriggerFor]="menu">ツール</button>
+  <mat-menu #menu="matMenu" [hasBackdrop]="false">
+    <ng-template matMenuContent *ngFor="let tool of webTools">
+      <button mat-menu-item [routerLink]="'/tools/' + tool.name">{{tool.title}}</button>
+    </ng-template>
+  </mat-menu>
+</nav>
