@@ -6,7 +6,7 @@
   <button mat-button [matMenuTriggerFor]="menu">ツール</button>
   <mat-menu #menu="matMenu" [hasBackdrop]="false">
     <ng-template matMenuContent *ngFor="let tool of webTools">
-      <button mat-menu-item [routerLink]="'/tools/' + tool.name">{{tool.title}}</button>
+      <button mat-menu-item [routerLink]="['tools', tool.name]">{{tool.title}}</button>
     </ng-template>
   </mat-menu>
 </nav>
