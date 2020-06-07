@@ -7,6 +7,7 @@ import { MatListModule } from '@angular/material/list';
 import { RouterModule, Routes } from '@angular/router';
 import { WebtoolsHeaderModule } from '../webtools-page-header/webtools-page-header';
 import { Anagram } from '../../webtools/anagram';
+import { WEB_TOOLS } from 'src/config';
 
 @Component({
   selector: 'app-webtools-sidenav',
@@ -22,13 +23,23 @@ export class ComponentSidenav implements OnInit, OnDestroy {
   ngOnDestroy() {}
 }
 
+const anagram = WEB_TOOLS.find((tool) => tool.name === 'anagram');
+
 const routes: Routes = [
   {
     path: '',
     component: ComponentSidenav,
     children: [
       { path: '', redirectTo: '/', pathMatch: 'full' },
-      { path: 'anagram', component: Anagram },
+      {
+        path: anagram.name,
+        component: Anagram,
+        data: {
+          description: anagram.description,
+          keywords: anagram.keywords,
+          url: anagram.url,
+        },
+      },
     ],
   },
 ];
