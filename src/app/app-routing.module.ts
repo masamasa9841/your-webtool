@@ -20,6 +20,7 @@ const routes: Routes = [
       scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled',
       relativeLinkResolution: 'corrected',
+      initialNavigation: 'enabled',
     }),
   ],
   exports: [RouterModule],
