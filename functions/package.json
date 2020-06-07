@@ -2,7 +2,7 @@
   "name": "functions",
   "scripts": {
     "lint": "tslint --project tsconfig.json",
-    "build": "node cp-angular && tsc",
+    "build": "tsc",
     "serve": "npm run build && firebase emulators:start --only functions",
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
@@ -15,8 +15,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "firebase-admin": "^8.10.0",
-    "firebase-functions": "^3.6.1",
-    "fs-extra": "^9.0.1"
+    "firebase-functions": "^3.6.1"
   },
   "devDependencies": {
     "@types/jsdom": "^16.1.0",
