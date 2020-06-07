@@ -3,8 +3,8 @@
     <span>your-webtool</span>
   </a>
 
-  <button mat-button [matMenuTriggerFor]="menu">ツール</button>
-  <mat-menu #menu="matMenu" [hasBackdrop]="false">
+  <button mat-button [matMenuTriggerFor]="menu" aria-label="Tool menu">ツール</button>
+  <mat-menu #menu="matMenu">
     <ng-template matMenuContent *ngFor="let tool of webTools">
       <button mat-menu-item [routerLink]="['tools', tool.name]">{{tool.title}}</button>
     </ng-template>
