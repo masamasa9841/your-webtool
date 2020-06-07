@@ -41,7 +41,12 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: dist
-          path: functions/dist
+          path: dist
+      - name: copy file
+        uses: canastro/copy-file-action@master
+        with:
+          source: "dist"
+          target: "functions/dist"
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
