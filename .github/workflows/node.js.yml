@@ -25,7 +25,7 @@ jobs:
           npm --prefix ./functions ci ./functions
       - name: Build
         run: |
-          npm run build
+          npm run build:ssr
           npm run build --prefix ./functions
       - name: Test
         run: npm run test -- --watch=false --browsers=ChromeHeadless
