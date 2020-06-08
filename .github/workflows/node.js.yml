@@ -20,7 +20,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
-        run: npm ci
+        run: |
+          npm ci
+          npm --prefix ./functions ci ./functions
       - name: Build
         run: |
           npm run build
