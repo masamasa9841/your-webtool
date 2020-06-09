@@ -61,8 +61,11 @@ jobs:
         with:
           name: lib
           path: functions/lib
+<<<<<<< HEAD
       - name: npm install
         run: npm --prefix ./functions ci ./functions
+=======
+>>>>>>> adc5e890cc6dcac95ad36ad9e44ee1d38f0003f4
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
