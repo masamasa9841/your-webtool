@@ -5,7 +5,9 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - develop
 
 jobs:
   build:
@@ -20,10 +22,10 @@ jobs:
       - name: Install Dependencies
         run: |
           npm ci
-          npm --prefix functions ci
+          npm --prefix ./functions ci ./functions
       - name: Build
         run: |
-          npm run build
+          npm run build:ssr
           npm run build --prefix ./functions
       - name: Test
         run: npm run test -- --watch=false --browsers=ChromeHeadless
@@ -59,6 +61,11 @@ jobs:
         with:
           name: lib
           path: functions/lib
+<<<<<<< HEAD
+      - name: npm install
+        run: npm --prefix ./functions ci ./functions
+=======
+>>>>>>> adc5e890cc6dcac95ad36ad9e44ee1d38f0003f4
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
