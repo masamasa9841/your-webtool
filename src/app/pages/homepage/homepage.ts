@@ -2,7 +2,6 @@ import { Component, NgModule, OnInit } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ComponentPageTitle } from '../page-title/page-title';
 import { MatCardModule } from '@angular/material/card';
-import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { AppConfig } from 'shared/app-config/app-config';
 import { WebTool } from 'src/config';

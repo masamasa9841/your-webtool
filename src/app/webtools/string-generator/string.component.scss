@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+}
+
+.text-area-full-width {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.text-area {
+  max-height: 500px;
+  height: auto;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}

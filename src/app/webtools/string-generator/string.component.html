@@ -1,0 +1,29 @@
+<div class="container">
+  <div>
+    <mat-form-field style="margin-right: 20px;">
+      <mat-label>生成タイプ</mat-label>
+      <mat-select [(value)]="optionSelectedValue">
+        <mat-option *ngFor="let option of stringOptions" [value]="option.value">
+          {{ option.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>文字数</mat-label>
+      <input matInput type="number" placeholder="Ex. 100" min="1" max="10000" [(ngModel)]="textLength" />
+      <span matSuffix>文字</span>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-radio-group aria-label="Select an option" [(ngModel)]="radioSelectedValue">
+      <mat-radio-button value="1">半角</mat-radio-button>
+      <mat-radio-button value="2">全角</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <mat-form-field class="text-area-full-width">
+    <mat-label>result</mat-label>
+    <textarea matInput class="text-area" readonly [value]="getText()"></textarea>
+  </mat-form-field>
+</div>

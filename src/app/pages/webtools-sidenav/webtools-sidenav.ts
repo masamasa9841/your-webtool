@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule, Routes } from '@angular/router';
 import { WebtoolsHeaderModule } from '../webtools-page-header/webtools-page-header';
-import { Anagram } from '../../webtools/anagram';
+import { Anagram, AnagramModule, StringGenerator, StringGeneratorModule } from 'webtools/index';
 import { WEB_TOOLS } from 'src/config';
 
 @Component({
@@ -24,6 +24,7 @@ export class ComponentSidenav implements OnInit, OnDestroy {
 }
 
 const anagram = WEB_TOOLS.find((tool) => tool.name === 'anagram');
+const stringGenerator = WEB_TOOLS.find((tool) => tool.name === 'string-generator');
 
 const routes: Routes = [
   {
@@ -40,6 +41,15 @@ const routes: Routes = [
           url: anagram.url,
         },
       },
+      {
+        path: stringGenerator.name,
+        component: StringGenerator,
+        data: {
+          description: stringGenerator.description,
+          keywords: stringGenerator.keywords,
+          url: stringGenerator.url,
+        },
+      },
     ],
   },
 ];
@@ -54,6 +64,8 @@ const routes: Routes = [
     MatIconModule,
     MatSidenavModule,
     WebtoolsHeaderModule,
+    AnagramModule,
+    StringGeneratorModule,
     RouterModule.forChild(routes),
   ],
   exports: [ComponentSidenav],

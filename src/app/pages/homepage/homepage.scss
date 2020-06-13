@@ -42,3 +42,10 @@ $margin-promotion-sections-small: 15px;
   flex-wrap: wrap;
   padding: 20px;
 }
+
+.card {
+  min-height: 130px;
+  @media (max-width: 720px) {
+    min-height: auto;
+  }
+}

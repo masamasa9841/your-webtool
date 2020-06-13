@@ -1,7 +1,7 @@
-<header focusOnNavigation class="docs-header-background" aria-label="Get started" id="homepage-header">
+<header focusOnNavigation class="docs-header-background" aria-label="Get started">
   <div class="docs-header-section">
     <div class="docs-header-headline">
-      <h1 class="mat-h1">Your Web Tool</h1>
+      <h1 class="mat-h1">Your WebTool</h1>
       <h2>便利なWebツール集</h2>
     </div>
   </div>
@@ -10,7 +10,7 @@
 <main class="docs-homepage-promo">
   <div class="docs-homepage-row tool-list">
     <a *ngFor="let tool of webTools;" class="list-item" [routerLink]="['tools', tool.name]">
-      <mat-card>
+      <mat-card class="card">
         <mat-card-title>{{tool.title}}</mat-card-title>
         <mat-card-content>{{tool.description}}</mat-card-content>
       </mat-card>
