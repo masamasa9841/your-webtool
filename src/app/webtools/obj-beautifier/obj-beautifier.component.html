@@ -1,1 +1,16 @@
-now develop
+<mat-form-field class="text-area-full-width">
+  <mat-label>Input Obj</mat-label>
+  <textarea matInput class="text-area" [(ngModel)]="inputObj"></textarea>
+</mat-form-field>
+
+<div>
+  <mat-radio-group aria-label="Select an option" [(ngModel)]="radioSelectedValue">
+    <mat-radio-button value="1">Key名でソート</mat-radio-button>
+    <mat-radio-button value="2">Key名でソートしない</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+<mat-form-field class="text-area-full-width">
+  <mat-label>result</mat-label>
+  <textarea matInput class="text-area" readonly [value]="getOutputObj()"></textarea>
+</mat-form-field>

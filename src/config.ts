@@ -22,17 +22,17 @@ export const WEB_TOOLS: WebTool[] = [
     url: 'http://localhost:4200/tools/string-generator',
   },
   {
-    name: 'tree',
-    title: 'tree生成',
-    description: 'treeコマンドのweb版です。資料作成にお使いください。',
-    keywords: 'tree, コマンド, web, 生成',
-    url: 'http://localhost:4200/tools/tree',
-  },
-  {
     name: 'obj-beautifier',
     title: 'Object整形ツール',
     description: 'Objectを整形します。並び替えもできます。',
     keywords: 'Object, obj, 整形, 並び替え',
     url: 'http://localhost:4200/tools/obj-beatufier',
+  },
+  {
+    name: 'tree',
+    title: 'tree生成',
+    description: 'treeコマンドのweb版です。資料作成にお使いください。',
+    keywords: 'tree, コマンド, web, 生成',
+    url: 'http://localhost:4200/tools/tree',
   },
 ];
