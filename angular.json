@@ -31,7 +31,19 @@
               "src/sitemap.xml"
             ],
             "styles": [
-              "src/styles.scss"
+              {"input": "src/styles.scss"},
+              {
+                "lazy": true,
+                "inject": false,
+                "input": "src/styles/custom-themes/light.scss",
+                "bundleName": "assets/light"
+              },
+              {
+                "lazy": true,
+                "inject": false,
+                "input": "src/styles/custom-themes/dark.scss",
+                "bundleName": "assets/dark"
+              }
             ],
             "scripts": []
           },
@@ -100,7 +112,19 @@
               "src/sitemap.xml"
             ],
             "styles": [
-              "src/styles.scss"
+              {"input": "src/styles.scss"},
+              {
+                "lazy": true,
+                "inject": false,
+                "input": "src/styles/custom-themes/light.scss",
+                "bundleName": "assets/light"
+              },
+              {
+                "lazy": true,
+                "inject": false,
+                "input": "src/styles/custom-themes/dark.scss",
+                "bundleName": "assets/dark"
+              }
             ],
             "scripts": []
           }

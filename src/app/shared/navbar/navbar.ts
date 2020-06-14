@@ -5,6 +5,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { AppConfig } from 'shared/app-config/app-config';
 import { WebTool } from 'src/config';
+import { ThemePickerModule } from 'shared/theme-picker';
 
 @Component({
   selector: 'app-navbar',
@@ -21,7 +22,7 @@ export class NavBar implements OnInit {
 }
 
 @NgModule({
-  imports: [CommonModule, MatButtonModule, MatMenuModule, RouterModule],
+  imports: [CommonModule, MatButtonModule, MatMenuModule, RouterModule, ThemePickerModule],
   exports: [NavBar],
   declarations: [NavBar],
   providers: [],
