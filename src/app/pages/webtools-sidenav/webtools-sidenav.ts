@@ -6,7 +6,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule, Routes } from '@angular/router';
 import { WebtoolsHeaderModule } from '../webtools-page-header/webtools-page-header';
-import { Anagram, AnagramModule, StringGenerator, StringGeneratorModule } from 'webtools/index';
+import {
+  Anagram,
+  AnagramModule,
+  StringGenerator,
+  StringGeneratorModule,
+  ObjBeautifierComponent,
+  ObjBeautifierModule,
+  TreeComponent,
+  TreeModule,
+} from 'webtools/index';
 import { WEB_TOOLS } from 'src/config';
 
 @Component({
@@ -24,7 +33,9 @@ export class ComponentSidenav implements OnInit, OnDestroy {
 }
 
 const anagram = WEB_TOOLS.find((tool) => tool.name === 'anagram');
+const tree = WEB_TOOLS.find((tool) => tool.name === 'tree');
 const stringGenerator = WEB_TOOLS.find((tool) => tool.name === 'string-generator');
+const objBeautifier = WEB_TOOLS.find((tool) => tool.name === 'obj-beautifier');
 
 const routes: Routes = [
   {
@@ -42,12 +53,30 @@ const routes: Routes = [
         },
       },
       {
+        path: tree.name,
+        component: TreeComponent,
+        data: {
+          description: tree.description,
+          keywords: tree.keywords,
+          url: tree.url,
+        },
+      },
+      {
         path: stringGenerator.name,
         component: StringGenerator,
         data: {
           description: stringGenerator.description,
           keywords: stringGenerator.keywords,
           url: stringGenerator.url,
+        },
+      },
+      {
+        path: objBeautifier.name,
+        component: ObjBeautifierComponent,
+        data: {
+          description: objBeautifier.description,
+          keywords: objBeautifier.keywords,
+          url: objBeautifier.url,
         },
       },
     ],
@@ -66,6 +95,8 @@ const routes: Routes = [
     WebtoolsHeaderModule,
     AnagramModule,
     StringGeneratorModule,
+    ObjBeautifierModule,
+    TreeModule,
     RouterModule.forChild(routes),
   ],
   exports: [ComponentSidenav],
