@@ -1,6 +1,4 @@
 import { Component, OnInit, NgModule } from '@angular/core';
-import { ComponentPageTitle } from 'src/app/pages/page-title/page-title';
-import { AppConfig } from 'shared/app-config/app-config';
 
 import { FormsModule, ReactiveFormsModule, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -33,9 +31,7 @@ export class StringGenerator implements OnInit {
   radioSelectedValue: string = '1';
   textLength: number = 100;
 
-  constructor(public _componentPageTitle: ComponentPageTitle, { webTools }: AppConfig) {
-    this._componentPageTitle.title = webTools.find((tool) => tool.name === 'string-generator')?.title;
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 

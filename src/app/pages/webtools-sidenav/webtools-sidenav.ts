@@ -47,6 +47,7 @@ const routes: Routes = [
         path: anagram.name,
         component: Anagram,
         data: {
+          title: anagram.title,
           description: anagram.description,
           keywords: anagram.keywords,
           url: anagram.url,
@@ -56,6 +57,7 @@ const routes: Routes = [
         path: tree.name,
         component: TreeComponent,
         data: {
+          title: tree.title,
           description: tree.description,
           keywords: tree.keywords,
           url: tree.url,
@@ -65,6 +67,7 @@ const routes: Routes = [
         path: stringGenerator.name,
         component: StringGenerator,
         data: {
+          title: stringGenerator.title,
           description: stringGenerator.description,
           keywords: stringGenerator.keywords,
           url: stringGenerator.url,
@@ -74,6 +77,7 @@ const routes: Routes = [
         path: objBeautifier.name,
         component: ObjBeautifierComponent,
         data: {
+          title: objBeautifier.title,
           description: objBeautifier.description,
           keywords: objBeautifier.keywords,
           url: objBeautifier.url,

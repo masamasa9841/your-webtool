@@ -1,6 +1,4 @@
 import { Component, OnInit, NgModule, ViewChild } from '@angular/core';
-import { ComponentPageTitle } from 'src/app/pages/page-title/page-title';
-import { AppConfig } from 'shared/app-config/app-config';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
@@ -37,9 +35,7 @@ export class Anagram implements OnInit {
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(public _componentPageTitle: ComponentPageTitle, { webTools }: AppConfig) {
-    this._componentPageTitle.title = webTools.find((tool) => tool.name === 'anagram')?.title;
-  }
+  constructor() {}
 
   ngOnInit(): void {
     this.anagram(this.inputText);

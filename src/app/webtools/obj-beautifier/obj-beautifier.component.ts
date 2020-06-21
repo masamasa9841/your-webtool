@@ -1,7 +1,5 @@
 import beautify from 'js-beautify';
 import { Component, OnInit, NgModule } from '@angular/core';
-import { ComponentPageTitle } from 'src/app/pages/page-title/page-title';
-import { AppConfig } from 'shared/app-config/app-config';
 
 import { FormsModule, ReactiveFormsModule, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -22,9 +20,7 @@ export class ObjBeautifierComponent implements OnInit {
   inputObj: string = '{"key02": "hoge", "key01": "fuga"}';
   radioSelectedValue: string = '2';
 
-  constructor(public _componentPageTitle: ComponentPageTitle, { webTools }: AppConfig) {
-    this._componentPageTitle.title = webTools.find((tool) => tool.name === 'obj-beautifier')?.title;
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 
