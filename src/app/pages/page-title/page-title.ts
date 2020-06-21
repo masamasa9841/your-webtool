@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Injectable({ providedIn: 'root' })
 export class ComponentPageTitle {
@@ -18,7 +18,8 @@ export class ComponentPageTitle {
       title = this._originalTitle;
     }
     this.bodyTitle.setTitle(title);
+    this.meta.updateTag({ property: 'og:title', content: title });
   }
 
-  constructor(private bodyTitle: Title) {}
+  constructor(private bodyTitle: Title, private meta: Meta) {}
 }

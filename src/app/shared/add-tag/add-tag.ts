@@ -7,12 +7,13 @@ export class AddTagService {
 
   updateOgUrl(url: string) {
     if (!url) url = 'https://your-webtool.app';
-    this.meta.updateTag({ name: 'og:url', content: url });
+    this.meta.updateTag({ property: 'og:url', content: url });
   }
 
   updateDescription(desc: string) {
     if (!desc) desc = '便利なウェブツール集';
     this.meta.updateTag({ name: 'description', content: desc });
+    this.meta.updateTag({ property: 'og:description', content: desc });
   }
 
   updateKeyWord(keyWord: string) {
