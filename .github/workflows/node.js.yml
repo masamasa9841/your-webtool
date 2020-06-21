@@ -50,11 +50,6 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: dist
-          path: dist
-      - name: Download Artifact Dist
-        uses: actions/download-artifact@master
-        with:
-          name: dist
           path: functions/dist
       - name: Download Artifact Lib
         uses: actions/download-artifact@master
