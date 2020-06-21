@@ -1,1 +1,14 @@
-now develop
+<div class="container">
+  <div>
+    <mat-form-field class="text-area-full-width">
+      <mat-label>INPUT</mat-label>
+      <textarea matInput id="input" class="text-area" [(ngModel)]="inputText"></textarea>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="text-area-full-width">
+      <mat-label>OUTPUT</mat-label>
+      <textarea matInput id="output" class="text-area" readonly [value]="getTree()"></textarea>
+    </mat-form-field>
+  </div>
+</div>
