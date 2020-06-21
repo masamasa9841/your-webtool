@@ -84,7 +84,8 @@ export class TreeComponent implements OnInit, AfterViewInit {
       // open されている親は｜で表現、そうでないなら空白
       var line = [];
 
-      [...Array(r.depth - 1)].forEach((_, i) => {
+      [...Array(r.depth).keys()].forEach((_, i) => {
+        if (i === 0) return;
         if (open[i]) line.push('│');
         else line.push('　');
       });
