@@ -1,9 +1,25 @@
+.mat-expansion-panel {
+  margin-bottom: 20px;
+}
+
 .text-area {
   max-height: 500px;
-  height: 200px;
+  height: 400px;
 }
 
 .text-area-full-width {
-  margin-top: 50px;
   width: 100%;
+}
+
+.container {
+  display: flex;
+  .text-area-full-width ~ .text-area-full-width {
+    padding-left: 16px;
+  }
+  @media (max-width: 720px) {
+    display: block;
+    .text-area-full-width ~ .text-area-full-width {
+      padding-left: 0px;
+    }
+  }
 }

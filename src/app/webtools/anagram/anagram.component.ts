@@ -2,15 +2,13 @@ import { Component, OnInit, NgModule, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
+import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTabsModule, MatTabChangeEvent } from '@angular/material/tabs';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { MatMenuModule } from '@angular/material/menu';
-import { RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 
 export interface PeriodicElement {
@@ -98,15 +96,13 @@ export class Anagram implements OnInit {
 @NgModule({
   imports: [
     CommonModule,
-    MatButtonModule,
-    MatMenuModule,
-    RouterModule,
     MatInputModule,
-    MatSlideToggleModule,
     MatTableModule,
     FormsModule,
     MatSortModule,
     MatTabsModule,
+    MatExpansionModule,
+    MatIconModule,
   ],
   exports: [Anagram],
   declarations: [Anagram],

@@ -1,14 +1,22 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>help</mat-icon>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>treeコマンドのweb版です。</p>
+    <p>資料作成やフォルダ構成を考えるときにお使いください。</p>
+  </mat-expansion-panel>
+</mat-accordion>
+
 <div class="container">
-  <div>
-    <mat-form-field class="text-area-full-width">
-      <mat-label>INPUT</mat-label>
-      <textarea matInput id="input" class="text-area" [(ngModel)]="inputText"></textarea>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field class="text-area-full-width">
-      <mat-label>OUTPUT</mat-label>
-      <textarea matInput id="output" class="text-area" readonly [value]="getTree()"></textarea>
-    </mat-form-field>
-  </div>
+  <mat-form-field class="text-area-full-width">
+    <mat-label>INPUT</mat-label>
+    <textarea matInput id="input" class="text-area" [(ngModel)]="inputText"></textarea>
+  </mat-form-field>
+  <mat-form-field class="text-area-full-width">
+    <mat-label>OUTPUT</mat-label>
+    <textarea matInput id="output" class="text-area" readonly [value]="getTree()"></textarea>
+  </mat-form-field>
 </div>

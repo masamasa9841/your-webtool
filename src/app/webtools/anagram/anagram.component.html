@@ -1,3 +1,15 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>help</mat-icon>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>アナグラムの全パターン(順列)を作成・出力をします</p>
+    <p>文字が多すぎると処理に時間がかかるため、8文字までとします(Table表示は5文字まで)。</p>
+  </mat-expansion-panel>
+</mat-accordion>
+
 <mat-tab-group mat-align-tabs="start" (selectedTabChange)="changeTab($event)">
   <mat-tab label="TextArea">
     <ng-container *ngTemplateOutlet="inputArea"></ng-container>
@@ -10,7 +22,7 @@
   <mat-tab label="Table">
     <ng-container *ngTemplateOutlet="inputArea"></ng-container>
 
-    <mat-form-field>
+    <mat-form-field class="text-area-full-width">
       <mat-label>Filter</mat-label>
       <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" />
     </mat-form-field>

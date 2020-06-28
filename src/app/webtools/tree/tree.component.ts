@@ -1,26 +1,23 @@
-import { Component, OnInit, NgModule, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, OnInit, NgModule, AfterViewInit, ElementRef, OnDestroy } from '@angular/core';
 
-import { FormsModule, ReactiveFormsModule, FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatSelectModule } from '@angular/material/select';
-import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { fromEvent } from 'rxjs';
-
-// beautify({ name: 'a' });
+import { fromEvent, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-tree',
   templateUrl: './tree.component.html',
   styleUrls: ['tree.component.scss'],
 })
-export class TreeComponent implements OnInit, AfterViewInit {
+export class TreeComponent implements OnInit, AfterViewInit, OnDestroy {
   private _el: HTMLElement;
+  private _subscription: Subscription;
   inputText: string = 'tree\n\tfolder\n\t\tfolder';
+
   constructor(element: ElementRef) {
     this._el = element.nativeElement;
   }
@@ -29,7 +26,7 @@ export class TreeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     const targetElement = this._el.querySelector('#input');
-    fromEvent(targetElement, 'keydown').subscribe((event: KeyboardEvent) => {
+    this._subscription = fromEvent(targetElement, 'keydown').subscribe((event: KeyboardEvent) => {
       // tab意外は即リターン
       if (event.keyCode !== 9) return;
       event.preventDefault();
@@ -41,6 +38,9 @@ export class TreeComponent implements OnInit, AfterViewInit {
     });
   }
 
+  /**
+   * tree作成
+   */
   getTree(): string {
     let maxDepth = 0;
     let list = [];
@@ -97,21 +97,14 @@ export class TreeComponent implements OnInit, AfterViewInit {
 
     return rows.join('\n');
   }
+
+  ngOnDestroy() {
+    this._subscription.unsubscribe();
+  }
 }
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    RouterModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatSelectModule,
-    MatAutocompleteModule,
-    MatRadioModule,
-    MatFormFieldModule,
-  ],
+  imports: [CommonModule, MatInputModule, FormsModule, MatFormFieldModule, MatIconModule, MatExpansionModule],
   exports: [TreeComponent],
   declarations: [TreeComponent],
   providers: [],

@@ -1,11 +1,10 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 
-import { FormsModule, ReactiveFormsModule, FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -57,15 +56,13 @@ export class StringGenerator implements OnInit {
 @NgModule({
   imports: [
     CommonModule,
-    MatButtonModule,
-    RouterModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule,
     MatSelectModule,
-    MatAutocompleteModule,
     MatRadioModule,
     MatFormFieldModule,
+    MatIconModule,
+    MatExpansionModule,
   ],
   exports: [StringGenerator],
   declarations: [StringGenerator],

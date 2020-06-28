@@ -1,16 +1,29 @@
-<mat-form-field class="text-area-full-width">
-  <mat-label>Input Obj</mat-label>
-  <textarea matInput class="text-area" [(ngModel)]="inputObj"></textarea>
-</mat-form-field>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>help</mat-icon>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Object(JSON)をbeautifyを使って整形します。</p>
+    <p>Objectは並び替えもできます。</p>
+  </mat-expansion-panel>
+</mat-accordion>
 
 <div>
   <mat-radio-group aria-label="Select an option" [(ngModel)]="radioSelectedValue">
-    <mat-radio-button value="1">Key名でソート</mat-radio-button>
-    <mat-radio-button value="2">Key名でソートしない</mat-radio-button>
+    <mat-radio-button value="1">ソート</mat-radio-button>
+    <mat-radio-button value="2">ソートしない</mat-radio-button>
   </mat-radio-group>
 </div>
 
-<mat-form-field class="text-area-full-width">
-  <mat-label>result</mat-label>
-  <textarea matInput class="text-area" readonly [value]="getOutputObj()"></textarea>
-</mat-form-field>
+<div class="container">
+  <mat-form-field class="text-area-full-width">
+    <mat-label>Input Obj</mat-label>
+    <textarea matInput class="text-area" [(ngModel)]="inputObj"></textarea>
+  </mat-form-field>
+  <mat-form-field class="text-area-full-width">
+    <mat-label>result</mat-label>
+    <textarea matInput class="text-area" readonly [value]="getOutputObj()"></textarea>
+  </mat-form-field>
+</div>
