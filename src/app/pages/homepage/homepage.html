@@ -12,7 +12,7 @@
     <a *ngFor="let tool of webTools;" class="list-item" [routerLink]="['tools', tool.name]">
       <mat-card class="card">
         <mat-card-title>{{tool.title}}</mat-card-title>
-        <mat-card-content>{{tool.description}}</mat-card-content>
+        <mat-card-content>{{tool.homeDescription}}</mat-card-content>
       </mat-card>
     </a>
   </div>
